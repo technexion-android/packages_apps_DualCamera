@@ -25,18 +25,16 @@ public class DualCamActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_dual_cam);
 		
-		// Create an instance of Camera
-		mBackCamera = getCameraInstance(1);
-		mFrontCamera = getCameraInstance(0);
-		
 		Log.i(TAG, "Number of cameras: " + Camera.getNumberOfCameras());
-
+				
+		// Create an instance of Camera
+		mBackCamera = getCameraInstance(0);		
         // Create back camera Preview view and set it as the content of our activity.
-        mBackCamPreview = new BackCameraPreview(this, mFrontCamera);
+        mBackCamPreview = new BackCameraPreview(this, mBackCamera);
         FrameLayout backPreview = (FrameLayout) findViewById(R.id.back_camera_preview);
         backPreview.addView(mBackCamPreview);
         
-       // Create front camera Preview view and set it as the content of our activity.
+//		mFrontCamera = getCameraInstance(1); // fail!
 //        mFrontCamPreview = new FrontCameraPreview(this, mFrontCamera);
 //        FrameLayout frontPreview = (FrameLayout) findViewById(R.id.front_camera_preview);
 //        frontPreview.addView(mFrontCamPreview);
