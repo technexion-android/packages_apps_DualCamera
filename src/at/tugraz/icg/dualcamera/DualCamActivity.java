@@ -7,10 +7,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.widget.FrameLayout;
 
-/*
- * 
- * http://stackoverflow.com/questions/12382322/is-it-possible-to-use-front-and-back-camera-at-same-time-in-android
- */
 public class DualCamActivity extends Activity {
 
 	private Camera mBackCamera;
@@ -34,7 +30,7 @@ public class DualCamActivity extends Activity {
         FrameLayout backPreview = (FrameLayout) findViewById(R.id.back_camera_preview);
         backPreview.addView(mBackCamPreview);
         
-		mFrontCamera = getCameraInstance(1); // fail!
+		mFrontCamera = getCameraInstance(1); 
         mFrontCamPreview = new FrontCameraPreview(this, mFrontCamera);
         FrameLayout frontPreview = (FrameLayout) findViewById(R.id.front_camera_preview);
         frontPreview.addView(mFrontCamPreview);
