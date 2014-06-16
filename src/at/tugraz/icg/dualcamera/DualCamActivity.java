@@ -34,10 +34,10 @@ public class DualCamActivity extends Activity {
         FrameLayout backPreview = (FrameLayout) findViewById(R.id.back_camera_preview);
         backPreview.addView(mBackCamPreview);
         
-//		mFrontCamera = getCameraInstance(1); // fail!
-//        mFrontCamPreview = new FrontCameraPreview(this, mFrontCamera);
-//        FrameLayout frontPreview = (FrameLayout) findViewById(R.id.front_camera_preview);
-//        frontPreview.addView(mFrontCamPreview);
+		mFrontCamera = getCameraInstance(1); // fail!
+        mFrontCamPreview = new FrontCameraPreview(this, mFrontCamera);
+        FrameLayout frontPreview = (FrameLayout) findViewById(R.id.front_camera_preview);
+        frontPreview.addView(mFrontCamPreview);
       
         
 	}
